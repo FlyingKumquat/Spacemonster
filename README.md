@@ -3,7 +3,7 @@ Spacemonster v.1.0
 
 Spacemonster is a JavaScript addon for [Rebuild the Universe](http://rebuildtheuniverse.com/).
 
-DESCRIPTION
+This is not for cheating, it simply adds new "helpers" to the game and changes how some thing are displayed. Everything in Spacemonster is an option that is disabled by default so you can pick and choose what you'd like see/change.
 
 How to Use/Install
 -----
@@ -21,4 +21,13 @@ $.getScript('https://rawgit.com/FlyingKumquat/Spacemonster/master/spacemonster.j
 
 Features/Config Options
 -----
-TBD
+* __Display Unit Types__
+  * Displays the Unit Type in the top right corner of each unit in the Units section
+* __Color Units by Type__
+  * Colors the inner shadow of each unit in the Units Section according to the Unit Type
+* __Disable Unaffordable Buttons__
+  * Disables Buy Buttons (X5, X10, MAX, etc.) if you cannot afford to make the purchase
+* __Glow Unit on Next__
+  * Creates a "Glow" on a unit when you can afford to buy up to the next bonus
+* __Display Buy Buttons__
+  * Allows you to enable/disable various Buy Buttons: X5, X10, X25, X50, X100, NEXT, MAX _("NEXT" buys up to the next bonus)_
