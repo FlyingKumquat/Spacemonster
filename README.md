@@ -7,7 +7,7 @@ This is not for cheating, it simply adds new "helpers" to the game and changes h
 
 How to Use/Install
 -----
-Create a Bookmark and name it "Spacemonster" (or whatever you want to call it) then copy & paste the below code into the URL text box and click Save. Next, go [Rebuild the Universe](http://rebuildtheuniverse.com/) (wait for the page to fully load) and click the Bookmark you just created. If done correctly, you should see a new option on DripStat's navigation bar that reads "Spacemonster".
+Create a Bookmark and name it "Spacemonster" (or whatever you want to call it) then copy & paste the below code into the URL text box and click Save. Next, go [Rebuild the Universe](http://rebuildtheuniverse.com/) (wait for the page to fully load) and click the Bookmark you just created. If done correctly, you should see a new option on the navigation bar that reads "Spacemonster".
 ```JavaScript
 javascript:(function(){
 	$.getScript('https://rawgit.com/FlyingKumquat/Spacemonster/master/spacemonster.js')
