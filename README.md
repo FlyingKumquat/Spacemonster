@@ -1,4 +1,4 @@
-Spacemonster v.1.0
+Spacemonster v.1.0-1.65
 ======
 
 Spacemonster is a JavaScript addon for [Rebuild the Universe](http://rebuildtheuniverse.com/).
