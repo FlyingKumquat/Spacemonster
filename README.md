@@ -3,7 +3,7 @@ Spacemonster v.1.0-1.65
 
 Spacemonster is a JavaScript addon for [Rebuild the Universe](http://rebuildtheuniverse.com/).
 
-This is not for cheating, it simply adds new "helpers" to the game and changes how some thing are displayed. Everything in Spacemonster is an option that is disabled by default so you can pick and choose what you'd like see/change.
+This is not for cheating, it simply adds new "helpers" to the game and changes how some things are displayed. Everything in Spacemonster is an option that is disabled by default so you can pick and choose what you'd like see/change.
 
 How to Use/Install
 -----
