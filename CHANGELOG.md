@@ -12,6 +12,9 @@ New Features:
 * __Notifications Position__
   * Allows users to change which corner notifications appear. _(because reasons)_
 
+Bug Fixes:
+* Fixed an ad-related issue that broke functionality after the "grain of sand" unit.
+
 ## v.1.0-1.65 _(11/7/14)_
 
 Initial Release
