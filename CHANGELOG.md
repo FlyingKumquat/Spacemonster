@@ -12,6 +12,9 @@ New Features:
 * __Notifications Position__
   * Allows users to change which corner notifications appear. _(because reasons)_
 
+Changes/Tweaks:
+* Achievements are now taken into consideration when checking affordability.
+
 Bug Fixes:
 * Fixed an ad-related issue that broke functionality after the "grain of sand" unit.
 
