@@ -276,7 +276,7 @@ function Check_Can_Buy(){
 function Update_Table(){
 	$('#TableObjects').children().each(function(i){
 		if($(this).find('i.fa-lock').length > 0){ return false; }
-		if($(this).hasClass('ads')){ continue; }
+		if($(this).hasClass('ads')){ return; }
 		if($(this).find('ul.littlebuttons').length < 1){
 			var id = $(this).attr('id').replace('tc','') - 1;
 			var unit_type = Get_Unit_Type(id);
