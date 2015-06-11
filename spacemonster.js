@@ -276,6 +276,7 @@ function Check_Can_Buy(){
 function Update_Table(){
 	$('#TableObjects').children().each(function(i){
 		if($(this).find('i.fa-lock').length > 0){ return false; }
+		if($(this).hasClass('ads')){ return false; }
 		if($(this).find('ul.littlebuttons').length < 1){
 			var id = $(this).attr('id').replace('tc','') - 1;
 			var unit_type = Get_Unit_Type(id);
@@ -867,4 +868,41 @@ function SM_Buy(id,count){
 			arUnit[id][4] += count;
 		}
 	}
+}
+
+function TEST_mainCalc(that) {
+    if (totalAtome >= arUnit[that][2]) {
+        atomsinvest += Number(arUnit[that][2]);
+        doc.getElementById('atomsinvest').innerHTML = rounding(atomsinvest, false,0);
+        totalAtome -= arUnit[that][2];
+        arUnit[that][2] = Number(arUnit[that][2]) + (arUnit[that][2] * arUnit[that][3]) / 100;
+        arUnit[that][4] = Number(arUnit[that][4]) + 1;
+		//------------------------------
+        atomepersecond += Number(arUnit[that][5]);
+        doc.getElementById('totalunits').innerHTML = rounding(++totalunit, false,0);
+        addsize(arUnit[that][0], arUnit[that][1]);
+        allprogress(that);
+        checkUpgrade(that);
+        updateBonusAll();
+        doc.getElementById("atomepersecond").innerHTML = rounding(atomepersecond, true,0) + " atoms/s";
+        if (doc.getElementById(arUnit[that][6]) != null && doc.getElementById(arUnit[that][7]) != null) {
+            doc.getElementById(arUnit[that][6]).innerHTML = arUnit[that][8] + " : " + Number(arUnit[that][4]);
+            doc.getElementById(arUnit[that][7]).innerHTML = rounding(Number(arUnit[that][2]), false,0);
+        }
+        var last = true;
+        if (arUnit[that][10] != "blank()")
+            if (arUnit[that][4] >= 1)
+                if (doc.getElementById(arUnit[that][9]).innerHTML.indexOf('atom') == -1) {
+                    last = false;
+                    var number = arUnit[that][6].substring(3, arUnit[that++][6].length);
+                    var classforname = (arrayNames[number] == "sagittarius dwarf galaxy") ? "namesagi" : "name";
+                    doc.getElementById(arUnit[that - 1][9]).innerHTML = "<a><div><input type='button' onmouseover='seeUnit(" + (that).toString() + ")' onclick='calculsclick(" + that + ")' style='background: url(images/" + arUnit[that - 1][11] + ");'/></div></a>" + "<div class='divinfo'><div><a class='linktotop' href='##'><p onclick='seeUnit(" + (that).toString() + ")' id='" + arUnit[that - 1][12] + "' class='" + classforname + "'>" + [arUnit[that - 1][13]] + " : 0</p></a><br><img alt='atom' src='images/atom.png'/><p id='" + arUnit[that - 1][14] + "' class='cost'>" + rounding(Number(arUnit[that][2]), false,0) + "</p><button class='btn btn-default btn-xs littlex10' style='outline:0;' type='button' onmouseover='seeUnit(" + (that).toString() + ")' onclick='tox10(" + (that).toString() + ")'>X10</button><button class='btn btn-default btn-xs littlemax' style='outline:0;' type='button' onmouseover='seeUnit(" + (that).toString() + ")' onclick='tomax(" + (that).toString() + ")'>MAX</button></div></div>";
+                    arUnit[that][16] = true;
+                    var numberPrev = arUnit[that - 1][6].substring(3, arUnit[that - 1][6].length);
+                    var name = plurials(arrayNames[numberPrev]);
+                    var desc = (name != "entire universes") ? "<p class='specresult'>" + name + " are 100 times more effective</p></div>" : "<p class='specresult'>Do I dare disturb the universe ?</br>-T. S. Eliot</p></div>";
+                    doc.getElementById('spec' + arrayNames.indexOf(arUnit[that - 1][13])).innerHTML = "<img id='imgspec" + numberPrev + "' class='imagesSpecs' src='specs/" + numberPrev + ".jpg'/><div class='shadow'></div><div class='specinfos'><p class='specnames'>" + allspec[numberPrev].name + "</p><p class='specdesc'>" + allspec[numberPrev].desc + "</p><p class='speccost'><img  src='images/atom.png'>" + rounding(allspec[numberPrev].cost, false,0) + "</p>" + desc;
+                }
+        checkAchievement(that,last);
+    }
 }
